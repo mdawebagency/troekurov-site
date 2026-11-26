@@ -1,0 +1,808 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ресторация «Троекуровъ» — Екатеринбург, ул. Малышева, 137</title>
+  <meta name="description" content="Место, где чтут традиции русской кухни и гостеприимства. Двухэтажный особняк на улице Малышева, 137. Ежедневно 12:00–23:00.">
+  <meta property="og:title" content="Ресторация «Троекуровъ»">
+  <meta property="og:description" content="Место, где чтут традиции русской кухни и гостеприимства.">
+  <meta property="og:image" content="img/hero/hero.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="img/hero/hero.jpg">
+  <link rel="stylesheet" href="css/style.css?v=56">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Restaurant","name":"Троекуровъ","servesCuisine":"Русская кухня",
+   "address":{"@type":"PostalAddress","streetAddress":"ул. Малышева, д. 137","addressLocality":"Екатеринбург","addressCountry":"RU"},
+   "telephone":"+7 (343) 378-81-18","openingHours":"Mo-Su 12:00-23:00"}
+  </script>
+</head>
+<body>
+
+  <header class="header" data-header>
+    <a class="header__logo" href="#top" aria-label="Ресторация «Троекуровъ» — на главную">
+      <img src="img/logo-420.png" width="210" height="148" alt="Ресторация «Троекуровъ» въ Екатеринбурге">
+    </a>
+
+    <div class="header__main">
+      <div class="header__top">
+        <a class="header__phone" href="tel:+73433788118">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 3.5h3l1.4 4.2-2 1.4a12 12 0 0 0 5.9 5.9l1.4-2 4.2 1.4v3a1.8 1.8 0 0 1-2 1.8A16.5 16.5 0 0 1 4.8 5.5a1.8 1.8 0 0 1 1.8-2z"/></svg>
+          <span>+7 (343) 378-81-18</span>
+        </a>
+        <div class="header__account">
+          <button class="header__link" type="button" data-sheet="login">Войти</button>
+          <button class="header__link" type="button" data-sheet="bonus">Личный кабинет бонусного клуба</button>
+        </div>
+        <button class="header__cart" type="button" aria-label="Корзина, товаров: 0" data-open-cart>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2.2l2.1 10.2a1.5 1.5 0 0 0 1.5 1.2h8.6a1.5 1.5 0 0 0 1.5-1.1L20.5 8H6.1"/><circle cx="9.5" cy="19.5" r="1.3"/><circle cx="17" cy="19.5" r="1.3"/></svg>
+          <span class="header__count" data-cart-count>0</span>
+        </button>
+        <button class="header__burger" type="button" aria-label="Открыть меню" aria-expanded="false" data-burger>
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+      <nav class="header__nav" aria-label="Разделы сайта">
+        <a href="#about">О ресторане</a>
+        <a href="#menu">Меню и доставка</a>
+        <a href="#news">Новости и акции</a>
+        <a href="#banquet">Банкетное меню</a>
+        <a href="#bonus">Бонусная система</a>
+        <a href="#reviews">Отзывы</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Мобильное меню -->
+  <div class="drawer" data-drawer hidden>
+    <nav class="drawer__nav" aria-label="Разделы сайта">
+      <a href="#about">О ресторане</a>
+      <a href="#menu">Меню и доставка</a>
+      <a href="#news">Новости и акции</a>
+      <a href="#banquet">Банкетное меню</a>
+      <a href="#bonus">Бонусная система</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <span class="ornament" aria-hidden="true"></span>
+    <div class="drawer__account">
+      <button type="button" data-sheet="login">Войти</button>
+      <button type="button" data-sheet="bonus">Личный кабинет бонусного клуба</button>
+      <a href="tel:+73433788118">+7 (343) 378-81-18</a>
+    </div>
+  </div>
+
+  <!-- Корзина -->
+  <aside class="cart" data-cart aria-label="Корзина" hidden>
+    <div class="cart__head">
+      <h2 class="cart__title">Корзина</h2>
+      <button class="cart__close" type="button" aria-label="Закрыть корзину" data-close-cart>×</button>
+    </div>
+    <span class="ornament" aria-hidden="true"></span>
+    <div class="cart__empty" data-cart-empty>
+      <p>В корзине пока пусто.</p>
+      <p class="cart__hint">Оформить доставку можно в разделе «Меню».</p>
+      <a class="btn btn--light" href="#menu" data-close-cart data-go-delivery>Перейти в меню</a>
+    </div>
+    <ul class="cart__list" data-cart-list hidden></ul>
+    <div class="cart__foot" data-cart-foot hidden>
+      <div class="cart__total"><span>Итого</span><b data-cart-total>0 ₽</b></div>
+      <button class="btn btn--light cart__go" type="button" data-cart-checkout>Оформить заказ</button>
+    </div>
+    <form class="cart__form sheet__form" data-cart-form hidden>
+      <label>Имя<input name="name" autocomplete="name" required></label>
+      <label>Телефон<input name="phone" type="tel" autocomplete="tel" placeholder="+7" required></label>
+      <label>Адрес доставки<input name="address" autocomplete="street-address" required></label>
+      <label>Комментарий<textarea name="comment" rows="2"></textarea></label>
+      <label class="sheet__agree"><input type="checkbox" required> С правилами обработки персональных данных согласен</label>
+      <button class="btn btn--light" type="submit">Отправить заказ</button>
+      <button class="cart__back" type="button" data-cart-back>← Вернуться к корзине</button>
+    </form>
+    <p class="cart__thanks" data-cart-thanks hidden>Спасибо! Мы перезвоним после 12:00 и сразу же начнём готовить блюда.</p>
+  </aside>
+  <div class="cart-shade" data-cart-shade hidden></div>
+
+  <main id="top">
+    <section class="hero" aria-label="Главный экран">
+      <div class="hero__media" data-hero-media>
+        <img class="is-active" src="img/hero/hero.jpg" alt="Зал ресторации «Троекуровъ»: деревянная барная стойка и антикварный буфет" fetchpriority="high">
+        <img src="img/hero/slide-food.jpg" alt="Блюдо ресторации «Троекуровъ»" decoding="async">
+        <img src="img/hero/slide-banquet.jpg" alt="Парадная гостиная, накрытая для банкета" decoding="async">
+      </div>
+      <div class="hero__shade"></div>
+
+      <div class="hero__content">
+        <p class="hero__kicker" data-reveal>Ресторация</p>
+        <h1 class="hero__title" data-title>Троекуровъ</h1>
+        <span class="hero__rule" data-rule></span>
+
+        <!-- Плашки, как в слайдере на их главной; меняются плавно вместе с фото -->
+        <div class="plaque" data-reveal aria-live="polite">
+          <div class="plaque__slides">
+            <article class="plaque__slide is-active">
+              <h2>Ресторация Троекуров</h2>
+              <p>Место, где чтут традиции русской кухни и гостеприимства. А&nbsp;шеф, вдохновляясь окружающим миром, каждый сезон представляет дегустационное меню.</p>
+            </article>
+            <article class="plaque__slide">
+              <h2>Изысканно</h2>
+              <p>Кухня ресторана вдохновлена русскими традициями, современными локальными продуктами и классическими французскими представлениями о высокой гастрономии.</p>
+            </article>
+            <article class="plaque__slide">
+              <h2>Для особых случаев</h2>
+              <p>Чтобы иметь возможность принять за одним столом сразу 80 гостей, в «Троекурове» была построена парадная гостиная, признанная одним из лучших банкетных залов Екатеринбурга. Здесь, например, президент России Дмитрий Медведев и канцлер Германии Ангела Меркель вместе ели осьминогов.</p>
+            </article>
+          </div>
+          <div class="plaque__nav">
+            <button class="plaque__arrow" type="button" aria-label="Предыдущий слайд" data-prev>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+            </button>
+            <div class="plaque__dots" role="tablist" aria-label="Слайды">
+              <button type="button" role="tab" aria-label="Ресторация Троекуров" aria-selected="true"></button>
+              <button type="button" role="tab" aria-label="Изысканно"></button>
+              <button type="button" role="tab" aria-label="Для особых случаев"></button>
+            </div>
+            <button class="plaque__arrow" type="button" aria-label="Следующий слайд" data-next>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="hero__actions" data-reveal>
+          <button class="btn btn--primary" type="button" data-open-booking>Забронировать стол</button>
+          <a class="btn btn--ghost" href="#menu">Меню</a>
+        </div>
+      </div>
+
+      <nav class="hero__links" aria-label="Гостям" data-reveal>
+        <button type="button" data-sheet="subscribe">Подписка на новости</button>
+        <button type="button" data-sheet="partners">Сотрудничество с рестораном</button>
+        <button type="button" data-sheet="gift">Подарочные сертификаты</button>
+        <button type="button" data-sheet="feedback">Обратная связь</button>
+        <button type="button" data-sheet="faq">Частые вопросы</button>
+        <button type="button" data-sheet="agreement">Пользовательское соглашение</button>
+        <button type="button" data-sheet="docs">Правовые документы</button>
+      </nav>
+    </section>
+
+    <!-- ============ О ресторане — тексты с их страницы «О ресторане» ============ -->
+    <section class="about" id="about" aria-labelledby="about-title">
+      <header class="section-head">
+        <p class="section-head__kicker" data-up>О ресторане</p>
+        <h2 class="section-head__title" id="about-title" data-letters>Ресторация Троекуров</h2>
+        <span class="ornament ornament--green" aria-hidden="true" data-ornament></span>
+      </header>
+
+      <div class="about__intro">
+        <div class="about__text">
+          <p class="about__lead" data-up><span class="dropcap" data-dropcap>Р</span>усская дворянская кухня возникла в стенах больших хлебосольных домов из традиций многовековой гастрономии нашей страны и классики французской кухни, которую завозили приглашенные заграничные повара. В современном Екатеринбурге эта атмосфера гостеприимства и высокого стиля воплощена в ресторане «Троекуровъ» — двухэтажном особняке на излете улицы Малышева.</p>
+          <p data-up>Поднявшись по широкой гулкой лестнице, вы попадете в воссозданный интерьер 19 века. Здесь мы собрали подлинный антиквариат и реплики мебели александровской и николаевской эпох, эскизы учеников Царскосельского лицея, одним из которых, кстати, был Александр Сергеевич Пушкин. У камина поставили глубокие кресла, у стены разместили красивое старинное пианино. В таких интерьерах могли бы жить герои Тургенева и Гончарова, а теперь оказаться на их месте может любой.</p>
+        </div>
+        <div class="about__photos">
+          <figure class="photo photo--main" data-photo>
+            <img src="img/about/g-own-6.jpg" alt="Главный зал ресторации «Троекуровъ» с люстрами" loading="lazy" decoding="async">
+          </figure>
+          <figure class="photo photo--small" data-photo>
+            <img src="img/about/g-4772.jpg" alt="Камин в зале ресторана" loading="lazy" decoding="async">
+          </figure>
+        </div>
+      </div>
+
+      <!-- Галерея интерьеров в одну линию: фото на разных высотах, едут при прокрутке,
+           листаются стрелками, свайпом и перетаскиванием; нажатие открывает фото крупно -->
+      <div class="strip" data-strip>
+        <div class="strip__viewport" data-strip-viewport>
+      <div class="gallery strip__track" data-gallery data-strip-track>
+        <button class="gallery__item" type="button" data-photo><img src="img/about/g-4771.jpg" alt="Зал с зелёными портьерами" loading="lazy" decoding="async"></button>
+        <button class="gallery__item" type="button" data-photo><img src="img/about/g-own-2.jpg" alt="Старинная лампа и пишущая машинка у окна" loading="lazy" decoding="async"></button>
+        <button class="gallery__item" type="button" data-photo><img src="img/about/g-4775.jpg" alt="Светлый зал с большими окнами" loading="lazy" decoding="async"></button>
+        <button class="gallery__item" type="button" data-photo><img src="img/about/g-4769.jpg" alt="Зал «Изба» с бревенчатыми стенами" loading="lazy" decoding="async"></button>
+        <button class="gallery__item" type="button" data-photo><img src="img/about/g-4774.jpg" alt="Старинный буфет" loading="lazy" decoding="async"></button>
+        <button class="gallery__item" type="button" data-photo><img src="img/about/g-own-5.jpg" alt="Старинное пианино в зале" loading="lazy" decoding="async"></button>
+        <button class="gallery__item" type="button" data-photo><img src="img/about/g-4776.jpg" alt="Сервированные столы у окон" loading="lazy" decoding="async"></button>
+        <button class="gallery__item" type="button" data-photo><img src="img/about/g-4777.jpg" alt="Цветы и картины в зале" loading="lazy" decoding="async"></button>
+        <button class="gallery__item" type="button" data-photo><img src="img/about/g-own-4.jpg" alt="Обеденный зал" loading="lazy" decoding="async"></button>
+        <button class="gallery__item" type="button" data-photo><img src="img/about/g-4773.jpg" alt="Уголок зала с сервированным столом" loading="lazy" decoding="async"></button>
+        <button class="gallery__item" type="button" data-photo><img src="img/about/g-4778.jpg" alt="Круглый стол в зале с окнами" loading="lazy" decoding="async"></button>
+        <button class="gallery__item" type="button" data-photo><img src="img/about/g-own-7.jpg" alt="Зал ресторана вечером" loading="lazy" decoding="async"></button>
+        <button class="gallery__item" type="button" data-photo><img src="img/about/g-4797.jpg" alt="Парадная гостиная со свечами" loading="lazy" decoding="async"></button>
+        <button class="gallery__item" type="button" data-photo><img src="img/about/g-4800.jpg" alt="Деталь интерьера" loading="lazy" decoding="async"></button>
+        <button class="gallery__item" type="button" data-photo><img src="img/about/g-4799.jpg" alt="Зал, накрытый к ужину" loading="lazy" decoding="async"></button>
+        <button class="gallery__item" type="button" data-photo><img src="img/about/g-4796.jpg" alt="Банкетный стол в парадной гостиной" loading="lazy" decoding="async"></button>
+      </div>
+        </div>
+        <div class="strip__nav">
+          <button class="strip__arrow" type="button" aria-label="Листать фото назад" data-strip-prev>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+          </button>
+          <div class="strip__progress" aria-hidden="true"><span data-strip-bar></span></div>
+          <button class="strip__arrow" type="button" aria-label="Листать фото вперёд" data-strip-next>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Шеф-повар — текст с их страницы -->
+      <div class="chef">
+        <figure class="photo photo--chef" data-photo>
+          <img src="img/about/chef-web.jpg" alt="Шеф-повар Михаил Ковалев" loading="lazy" decoding="async">
+        </figure>
+        <div class="chef__text">
+          <p class="section-head__kicker" data-up>Шеф-повар</p>
+          <h3 class="chef__name" data-up>Михаил Ковалев</h3>
+          <p data-up>Бессменный управляющий шеф-повар «Троекурова» Михаил Ковалев выстраивает кухню ресторана на объединении гастрономического наследия эпохи, когда в России на французском говорили лучше, чем на русском, с современными веяниями. Курицу и кроликов, которых выращивают знакомые Михаила, уехавшие из города в деревню, он готовит при низких температурах в технике су-вид. Начинку для пельменей, помимо традиционного уральского варианта с говядиной и свининой, делает из оленины. А осенью, всего пару месяцев в году, подает сосьвинскую селедку, выловленную на севере Урала.</p>
+          <p data-up>Еще Миша обладает редким даром удачно сочетать вина с русской кухней и привозит столовую воду с домашнего родника в окрестностях Екатеринбурга. Лучшие сочетания и блюда он с удовольствием лично рекомендует гостям.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Меню и доставка — всё из их PDF-меню и каталога доставки ============ -->
+    <section class="menu-sec" id="menu" aria-labelledby="menu-title">
+      <header class="section-head">
+        <p class="section-head__kicker" data-up>Меню и доставка</p>
+        <h2 class="section-head__title" id="menu-title" data-letters>Меню ресторана</h2>
+        <span class="ornament ornament--green" aria-hidden="true" data-ornament></span>
+      </header>
+
+      <div class="tabs" role="tablist" aria-label="Меню" data-tabs data-up>
+        <span class="tabs__pill" aria-hidden="true" data-tabs-pill></span>
+        <button class="tabs__btn" type="button" role="tab" aria-selected="true" data-tab="main">Основное меню</button>
+        <button class="tabs__btn" type="button" role="tab" aria-selected="false" data-tab="lunch">Обеды и поздние завтраки</button>
+        <button class="tabs__btn" type="button" role="tab" aria-selected="false" data-tab="kids">Детское меню</button>
+        <button class="tabs__btn" type="button" role="tab" aria-selected="false" data-tab="delivery">Доставка</button>
+      </div>
+
+      <!-- Меню из PDF: заполняется из data/menu-pdf.json -->
+      <div class="menu-card" role="tabpanel" data-panel="menu">
+        <nav class="menu-card__chips" aria-label="Разделы меню" data-menu-chips></nav>
+        <p class="menu-card__hours" data-menu-hours hidden></p>
+        <div class="menu-card__sections" data-menu-sections></div>
+        <p class="menu-card__note" data-menu-note></p>
+      </div>
+
+      <!-- Доставка: каталог с их сайта, блюда добавляются в корзину -->
+      <div class="delivery" role="tabpanel" data-panel="delivery" hidden>
+        <p class="delivery__notice">Служба доставки работает с 12:00, но мы уже сейчас готовы принять ваш заказ. Мы перезвоним после 12:00 и сразу же начнём готовить блюда.</p>
+        <nav class="delivery__chips" aria-label="Разделы доставки" data-delivery-chips></nav>
+        <div class="delivery__grid" data-delivery-grid></div>
+      </div>
+
+      <!-- PDF-меню для скачивания -->
+      <div class="pdfs">
+        <p class="pdfs__lead" data-up>Для вашего удобства мы подготовили меню в формате PDF, которое вы можете скачать одним нажатием</p>
+        <div class="pdfs__grid">
+          <a class="pdf" href="menu-pdf/main.pdf" target="_blank" rel="noopener" data-up><span class="pdf__photo"><img src="img/pdf/main.jpg" alt="" loading="lazy" decoding="async"><span class="pdf__badge">PDF</span></span><span class="pdf__title">Основное меню</span><span class="pdf__size"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19.5h14"/></svg>Скачать · 247 КБ</span></a>
+          <a class="pdf" href="menu-pdf/english.pdf" target="_blank" rel="noopener" data-up><span class="pdf__photo"><img src="img/pdf/english.jpg" alt="" loading="lazy" decoding="async"><span class="pdf__badge">PDF</span></span><span class="pdf__title">Menu in English</span><span class="pdf__size"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19.5h14"/></svg>Скачать · 79 КБ</span></a>
+          <a class="pdf" href="menu-pdf/chinese.pdf" target="_blank" rel="noopener" data-up><span class="pdf__photo"><img src="img/pdf/chinese.jpg" alt="" loading="lazy" decoding="async"><span class="pdf__badge">PDF</span></span><span class="pdf__title">Menu in Chinese</span><span class="pdf__size"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19.5h14"/></svg>Скачать · 387 КБ</span></a>
+          <a class="pdf" href="menu-pdf/kids.pdf" target="_blank" rel="noopener" data-up><span class="pdf__photo"><img src="img/pdf/kids.jpg" alt="" loading="lazy" decoding="async"><span class="pdf__badge">PDF</span></span><span class="pdf__title">Детское меню</span><span class="pdf__size"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19.5h14"/></svg>Скачать · 763 КБ</span></a>
+          <a class="pdf" href="menu-pdf/lunch.pdf" target="_blank" rel="noopener" data-up><span class="pdf__photo"><img src="img/pdf/lunch.jpg" alt="" loading="lazy" decoding="async"><span class="pdf__badge">PDF</span></span><span class="pdf__title">Меню обедов</span><span class="pdf__size"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19.5h14"/></svg>Скачать · 56 КБ</span></a>
+          <a class="pdf" href="menu-pdf/banquet.pdf" target="_blank" rel="noopener" data-up><span class="pdf__photo"><img src="img/pdf/banquet.jpg" alt="" loading="lazy" decoding="async"><span class="pdf__badge">PDF</span></span><span class="pdf__title">Банкетное меню</span><span class="pdf__size"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19.5h14"/></svg>Скачать · 1,5 МБ</span></a>
+          <a class="pdf" href="menu-pdf/wine.pdf" target="_blank" rel="noopener" data-up><span class="pdf__photo"><img src="img/pdf/wine.jpg" alt="" loading="lazy" decoding="async"><span class="pdf__badge">PDF</span></span><span class="pdf__title">Винная карта</span><span class="pdf__size"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19.5h14"/></svg>Скачать · 199 КБ</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Новости и акции — как на их странице «Новости»: главная новость, другие новости, отзывы ============ -->
+    <section class="news" id="news" aria-labelledby="news-title">
+      <header class="section-head section-head--light">
+        <p class="section-head__kicker" data-up>Новости и акции</p>
+        <h2 class="section-head__title" id="news-title" data-letters>Новости и акции</h2>
+        <span class="ornament" aria-hidden="true" data-ornament></span>
+      </header>
+
+      <!-- Главная новость — полностью, как у них вверху страницы -->
+      <article class="news-main">
+        <figure class="photo news-main__photo" data-photo>
+          <img src="img/news/62.jpg" alt="Зимний дегустационный сет «Мороз и солнце»" loading="lazy" decoding="async">
+        </figure>
+        <div class="news-main__body">
+          <time class="news-date" datetime="2026-11-12" data-up>12 ноября 2026</time>
+          <h3 class="news-main__title" data-up>Зимний дегустационный сет «Мороз и солнце»</h3>
+          <p data-up>У ясного зимнего дня свой блеск. Снег искрится на солнце, мороз щиплет щёки, и особенно приятно с улицы войти в тепло и сесть за красиво накрытый стол.</p>
+          <p data-up>В новом дегустационном меню мы щедры на деликатесы. Устрица с лососем открывает ужин свежей морской нотой, за которой следуют фуа-гра с трюфелем, хрустящая осетрина с икорным соусом и лосятина. А в финале — нежное бланманже из ряженки с ананасом в золотистой карамели. Немного солнца посреди зимы.</p>
+          <div class="news-set" data-up>
+            <p class="news-set__title">Меню сета</p>
+            <ol>
+              <li>Устрица с лососем и соусом «Эстрагон»</li>
+              <li>Ростбиф с лёгким салатом</li>
+              <li>Фуа-гра Веллингтон с трюфельным соусом</li>
+              <li>Хрустящая осетрина с икорным соусом</li>
+              <li>Бифштекс из лосятины с картофелем «Пушкин»</li>
+              <li>Бланманже из ряженки с ананасом в карамели</li>
+            </ol>
+            <p class="news-set__price">Шесть подач — 6 500 ₽</p>
+          </div>
+          <button class="btn btn--primary news-main__btn" type="button" data-open-booking data-up>Забронировать стол</button>
+        </div>
+      </article>
+
+      <!-- Другие новости -->
+      <h3 class="news__sub" data-up>Другие новости</h3>
+      <div class="news-list">
+        <article class="ncard" data-up>
+          <button class="ncard__photo" type="button" data-sheet="news-app" aria-label="Читать: Изменения в работе мобильного приложения"><img src="img/news/60.jpg" alt="" loading="lazy" decoding="async"></button>
+          <time class="news-date" datetime="2026-10-29">29 октября 2026</time>
+          <h4 class="ncard__title">Изменения в работе мобильного приложения</h4>
+          <p class="ncard__lead">Доставка из «Троекурова» — на нашем сайте</p>
+          <button class="ncard__more" type="button" data-sheet="news-app">Читать больше</button>
+        </article>
+        <article class="ncard" data-up>
+          <button class="ncard__photo" type="button" data-sheet="news-lunch" aria-label="Читать: Обновили обеденное меню"><img src="img/news/63.jpg" alt="" loading="lazy" decoding="async"></button>
+          <time class="news-date" datetime="2026-10-18">18 октября 2026</time>
+          <h4 class="ncard__title">Обновили обеденное меню</h4>
+          <p class="ncard__lead">Готовим по будням с 12 до 16</p>
+          <button class="ncard__more" type="button" data-sheet="news-lunch">Читать больше</button>
+        </article>
+        <article class="ncard" data-up>
+          <button class="ncard__photo" type="button" data-sheet="news-fest" aria-label="Читать: Российский ресторанный фестиваль"><img src="img/news/59.jpg" alt="" loading="lazy" decoding="async"></button>
+          <time class="news-date" datetime="2026-10-05">5 октября 2026</time>
+          <h4 class="ncard__title">Российский ресторанный фестиваль</h4>
+          <p class="ncard__lead">«Троекуров» вновь участвует в Российском ресторанном фестивале</p>
+          <button class="ncard__more" type="button" data-sheet="news-fest">Читать больше</button>
+        </article>
+        <article class="ncard" data-up>
+          <button class="ncard__photo" type="button" data-sheet="news-gift" aria-label="Читать: Подарочные сертификаты"><img src="img/news/56.jpg" alt="" loading="lazy" decoding="async"></button>
+          <time class="news-date" datetime="2026-09-01">1 сентября 2026</time>
+          <h4 class="ncard__title">Подарочные сертификаты</h4>
+          <p class="ncard__lead">Подарочные сертификаты ресторана «Троекуров»</p>
+          <button class="ncard__more" type="button" data-sheet="news-gift">Читать больше</button>
+        </article>
+      </div>
+
+    </section>
+
+    <!-- ============ Банкетное меню — всё из их PDF «Банкетное меню» ============ -->
+    <section class="banquet" id="banquet" aria-labelledby="banquet-title">
+      <header class="section-head">
+        <p class="section-head__kicker" data-up>Банкеты и мероприятия</p>
+        <h2 class="section-head__title" id="banquet-title" data-letters>Банкетное меню</h2>
+        <span class="ornament ornament--green" aria-hidden="true" data-ornament></span>
+      </header>
+
+      <!-- Вступление и фото банкетов -->
+      <div class="bq-intro">
+        <div class="bq-intro__text">
+          <p class="bq-lead" data-up>Ресторан «Троекуров» организует для вас мероприятия любого уровня сложности, такие как грандиозные официальные приёмы, небольшие светские вечеринки, свадьбы или юбилеи.</p>
+          <p data-up>Наш шеф и управляющий Михаил Ковалев поможет выбрать блюда и составить меню, которое будет соответствовать формату мероприятия. Сомелье ресторана поможет подобрать вино и другие алкогольные напитки для вашего мероприятия, учитывая вкусовую гамму блюд, включённых в меню.</p>
+          <p data-up>Партнёры ресторана помогут вам создать оригинальный сценарий мероприятия, подберут художественное оформление площадки, соответствующее стилистике планируемого мероприятия.</p>
+          <p data-up>Обращаясь в ресторан «Троекуров», вы доверяете своё мероприятие в руки лучших профессионалов.</p>
+        </div>
+        <div class="bq-mosaic">
+          <figure class="photo bq-mosaic__a" data-photo><img src="img/banquet/feast-2.jpg" alt="Банкетный стол со свечами в парадной гостиной" loading="lazy" decoding="async"></figure>
+          <figure class="photo bq-mosaic__b" data-photo><img src="img/banquet/feast-1.jpg" alt="Длинный банкетный стол, накрытый к празднику" loading="lazy" decoding="async"></figure>
+          <figure class="photo bq-mosaic__c" data-photo><img src="img/banquet/izba-table.jpg" alt="Стол, накрытый в Русской избе" loading="lazy" decoding="async"></figure>
+          <figure class="photo bq-mosaic__d" data-photo><img src="img/banquet/feast-3.jpg" alt="Банкет в парадной гостиной" loading="lazy" decoding="async"></figure>
+        </div>
+      </div>
+
+      <!-- Залы -->
+      <h3 class="bq-sub" data-up>Возможности размещения гостей</h3>
+      <div class="rooms">
+        <article class="room" data-up><figure class="photo room__photo" data-photo><img src="img/banquet/family.jpg" alt="Семейный зал" loading="lazy" decoding="async"></figure><p class="room__floor">Первый этаж</p><h4 class="room__name">Семейный зал</h4><p class="room__cap">до 16 гостей</p></article>
+        <article class="room" data-up><figure class="photo room__photo" data-photo><img src="img/banquet/izba.jpg?v=2" alt="Русская изба" loading="lazy" decoding="async"></figure><p class="room__floor">Первый этаж</p><h4 class="room__name">Русская изба</h4><p class="room__cap">до 14 гостей</p></article>
+        <article class="room" data-up><figure class="photo room__photo" data-photo><img src="img/banquet/living.jpg" alt="Жилая комната" loading="lazy" decoding="async"></figure><p class="room__floor">Второй этаж</p><h4 class="room__name">Жилая комната</h4><p class="room__cap">до 12 гостей</p></article>
+        <article class="room" data-up><figure class="photo room__photo" data-photo><img src="img/banquet/old.jpg?v=2" alt="Зал старой ресторации" loading="lazy" decoding="async"></figure><p class="room__floor">Второй этаж</p><h4 class="room__name">Зал старой ресторации</h4><p class="room__cap">до 8 гостей</p></article>
+        <article class="room" data-up><figure class="photo room__photo" data-photo><img src="img/banquet/library.jpg?v=2" alt="Библиотека" loading="lazy" decoding="async"></figure><p class="room__floor">Второй этаж</p><h4 class="room__name">Библиотека</h4><p class="room__cap">до 8 гостей</p></article>
+        <article class="room" data-up><figure class="photo room__photo" data-photo><img src="img/banquet/lounge.jpg" alt="Гостиная" loading="lazy" decoding="async"></figure><p class="room__floor">Второй этаж</p><h4 class="room__name">Гостиная</h4><p class="room__cap">до 20 гостей</p></article>
+      </div>
+
+      <!-- Парадная гостиная и рассадка -->
+      <div class="grand">
+        <figure class="photo grand__photo" data-photo><img src="img/banquet/grand.jpg" alt="Парадная гостиная" loading="lazy" decoding="async"></figure>
+        <div class="grand__text">
+          <p class="room__floor" data-up>Второй этаж</p>
+          <h4 class="grand__name" data-up>Парадная гостиная</h4>
+          <p class="room__cap" data-up>до 100 гостей</p>
+          <p data-up>Расстановку столов в «Парадной гостиной» можно выбрать исходя из количества гостей.</p>
+          <figure class="grand__scheme" data-up>
+            <img src="img/banquet/seating.png" alt="Примеры рассадки: пример 1 — до 30 человек, один длинный стол у сцены; пример 2 — до 50 человек, столы полукругом перед сценой" loading="lazy" decoding="async">
+            <figcaption>Примеры рассадки гостей: до 30 и до 50 человек</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <!-- Примеры заказа: заполняется из data/banquet.json -->
+      <div class="bq-menu">
+        <h3 class="bq-sub" data-up>Пример предварительного заказа на 10 человек</h3>
+        <div class="tabs bq-tabs" role="tablist" aria-label="Примеры заказа" data-bq-tabs data-up>
+          <span class="tabs__pill" aria-hidden="true" data-bq-pill></span>
+        </div>
+        <div class="menu-card bq-card" data-bq-card></div>
+      </div>
+
+      <!-- Условия и контакты -->
+      <div class="bq-terms">
+        <div class="bq-terms__box" data-up>
+          <h3 class="bq-terms__title">Для проведения мероприятий необходимо</h3>
+          <ul>
+            <li>составить предварительный заказ;</li>
+            <li>внести предоплату в размере 50% от стоимости банкета;</li>
+            <li>компаниям от 8 человек в счёт включается сервисный сбор 10%;</li>
+            <li>оплата по безналичному расчёту возможна не позднее, чем за 3 дня до проведения мероприятия, в размере 100%.</li>
+          </ul>
+        </div>
+        <div class="bq-terms__box bq-terms__box--green" data-up>
+          <h3 class="bq-terms__title">Рассчитать и подготовить банкетное предложение поможет наш шеф — Михаил Ковалев</h3>
+          <a class="bq-contact" href="tel:+79122468367">+7 912 246-83-67</a>
+          <a class="bq-contact" href="mailto:mkovalev@troekurov.ru">mkovalev@troekurov.ru</a>
+          <a class="btn btn--light bq-pdf-btn" href="menu-pdf/banquet.pdf" target="_blank" rel="noopener">Банкетное меню · PDF, 1,5 МБ</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Бонусная система — всё с их страницы «Бонусная система» ============ -->
+    <section class="bonus" id="bonus" aria-labelledby="bonus-title">
+      <header class="section-head section-head--light">
+        <p class="section-head__kicker" data-up>Бонусная система</p>
+        <h2 class="section-head__title" id="bonus-title" data-letters>Программа лояльности для гостей</h2>
+        <span class="ornament" aria-hidden="true" data-ornament></span>
+      </header>
+
+      <!-- Главное: 5% баллами + карта -->
+      <div class="bonus-hero">
+        <div class="bonus-hero__text">
+          <p class="bonus-hero__big" data-up>Возвращаем <b>5%</b> баллами</p>
+          <p data-up>Мы предлагаем нашим постоянным гостям не только разнообразное меню от известного шеф-повара и достойный сервис, но и выгодное предложение по программе лояльности с возможностью копить баллы и расплачиваться ими.</p>
+          <p data-up>Участники программы первыми узнают обо всех новостях ресторана, специальных предложениях и особых мероприятиях.</p>
+          <div class="bonus-hero__actions" data-up>
+            <button class="btn btn--light" type="button" data-sheet="bonus-card">Получить бонусную карту</button>
+            <a class="bonus-hero__pdf" href="menu-pdf/loyalty.pdf" target="_blank" rel="noopener">Подробно о программе лояльности · PDF</a>
+          </div>
+        </div>
+        <!-- Электронная карта, как она выглядит в Wallet -->
+        <div class="wallet" data-wallet aria-hidden="true">
+          <div class="wallet__card">
+            <div class="wallet__top">
+              <img src="img/logo-420.png" alt="" width="120" height="85">
+              <div class="wallet__bal"><span>Баланс</span><b data-wallet-balance>0</b></div>
+            </div>
+            <div class="wallet__mid"><span>Бонусная карта</span><b>Троекуровъ</b></div>
+            <div class="wallet__bot"><span>Кешбэк</span><b>5%</b><span class="wallet__chip">Wallet</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Преимущества карты -->
+      <h3 class="bonus__sub" data-up>Преимущества карты</h3>
+      <div class="perks">
+        <article class="perk" data-up><b class="perk__num">5%</b><p>Накопление 5% от суммы чека.</p></article>
+        <article class="perk" data-up><b class="perk__num">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M10 18.5h4"/></svg></b><p>Карта всегда при вас и хранится в приложении Wallet вашего телефона.</p></article>
+        <article class="perk" data-up><b class="perk__num">50%</b><p>Вы можете оплатить баллами до 50% чека.</p></article>
+        <article class="perk" data-up><b class="perk__num">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg></b><p>Начисляем баллы в том числе и на стоимость доставки.</p></article>
+      </div>
+
+      <div class="bonus-note" data-up>
+        <span class="bonus-note__icon" aria-hidden="true">!</span>
+        <p>Так как программа рассчитана на постоянных гостей, то срок жизни бонусов на карте составляет 3 месяца с даты последней операции. Чтобы бонусы не сгорели, приходите к нам чаще, а мы в свою очередь будем удивлять вас новым меню и интересными предложениями.</p>
+      </div>
+
+      <!-- Часто задаваемые вопросы — все 14 с их страницы -->
+      <h3 class="bonus__sub" data-up>Часто задаваемые вопросы</h3>
+      <div class="faq bonus-faq">
+        <details class="faq__item" data-up><summary>Можно ли одновременно рассчитаться бонусами и накопить их?</summary><div class="faq__answer"><p>Бонусной программой такая возможность не предусмотрена. Наши гости при оплате заказа могут только накопить баллы или потратить их.</p></div></details>
+        <details class="faq__item" data-up><summary>Что делать, если я в ресторане сделал заказ, а карты с собой у меня нет?</summary><div class="faq__answer"><p>Мы специально отказались от пластиковых карт, чтобы избегать таких ситуаций. Электронная карта всегда с вами в телефоне. В случае, если телефона с картой в момент заказа у вас не оказалось, то мы не сможем начислить вам бонусы за заказ.</p></div></details>
+        <details class="faq__item" data-up><summary>Как стать участником программы?</summary><div class="faq__answer"><p>Для участия в бонусной программе необходимо зарегистрировать карту. Регистрацию можно пройти двумя способами: на сайте или во время визита в ресторан.</p></div></details>
+        <details class="faq__item" data-up><summary>Что такое бонусы и как ими воспользоваться?</summary><div class="faq__answer"><p>Бонусы в нашей программе лояльности — это символические баллы, которые вы накапливаете при оплате своих заказов. Один накопленный бонус равен одному рублю. Бонусами вы можете оплатить до 50% суммы чека.</p></div></details>
+        <details class="faq__item" data-up><summary>Как начисляются бонусы?</summary><div class="faq__answer"><p>Вы получаете бонусные баллы, когда рассчитываетесь в ресторане, оплачиваете доставку.</p></div></details>
+        <details class="faq__item" data-up><summary>А за что не начисляются баллы?</summary><div class="faq__answer"><p>Специальные меню, скидки, комплименты, промокоды, акции и прочие варианты привилегий при начислении бонусов не учитываются.</p></div></details>
+        <details class="faq__item" data-up><summary>Когда бонусы появятся на моём счёте?</summary><div class="faq__answer"><p>Бонусы, накопленные за покупки с использованием карты, становятся доступны для расходования через сутки после произведения оплаты. Если этого не произошло, то свяжитесь с нами любым удобным для вас способом.</p></div></details>
+        <details class="faq__item" data-up><summary>Как мне узнать, сколько бонусов у меня на карте?</summary><div class="faq__answer"><p>Чтобы узнать, сколько у вас бонусов, вы можете найти карту в приложении Wallet на телефоне, в правом верхнем углу отобразится ваш бонусный баланс.</p></div></details>
+        <details class="faq__item" data-up><summary>Сколько времени действительны накопительные бонусы?</summary><div class="faq__answer"><p>Так как программа рассчитана на постоянных гостей, то срок жизни бонусов на карте составляет 3 месяца с даты последней операции. Чтобы избежать этого, посещайте нас чаще, а мы, в свою очередь, будем удивлять вас новым меню и интересными предложениями.</p></div></details>
+        <details class="faq__item" data-up><summary>Как я могу оплатить счёт бонусами в ресторане?</summary><div class="faq__answer"><p>Чтобы рассчитаться бонусами, в момент оплаты счёта в ресторане вам необходимо предъявить бонусную карту официанту.</p></div></details>
+        <details class="faq__item" data-up><summary>Какую часть счёта я могу оплатить бонусными баллами?</summary><div class="faq__answer"><p>Бонусной программой предусмотрена возможность оплаты не более 50% суммы счёта.</p></div></details>
+        <details class="faq__item" data-up><summary>Если я удалил бонусную карту с телефона, как её восстановить?</summary><div class="faq__answer"><p>Вы можете обратиться в ресторан, и менеджер перевыпустит вашу карту со всей историей покупок и бонусным балансом.</p></div></details>
+        <details class="faq__item" data-up><summary>Могут ли юридические лица и индивидуальные предприниматели стать участниками бонусной программы?</summary><div class="faq__answer"><p>В программе могут принимать участие только физические лица, достигшие 18 лет.</p></div></details>
+        <details class="faq__item" data-up><summary>Если у меня изменился номер мобильного телефона, что мне делать?</summary><div class="faq__answer"><p>Вам необходимо обратиться в ресторан, назвать свой старый и новый номера телефона менеджеру или официанту. При этом у вас на телефоне должна быть установлена наша бонусная карта, она является подтверждением того, что номер телефона, который вы желаете заменить, принадлежит вам.</p></div></details>
+        <details class="faq__item" data-up><summary>Как будет использована информация, указанная мною при регистрации в программе?</summary><div class="faq__answer"><p>Полученная информация необходима для:</p><ul><li>восстановления утраченной бонусной карты и её баланса;</li><li>информирования вас о новых и специальных меню, скидках, акциях и событиях, проходящих в ресторане.</li></ul></div></details>
+      </div>
+    </section>
+
+    <!-- ============ Отзывы гостей — все отзывы с их сайта (data/reviews.json) ============ -->
+    <section class="reviews-sec" id="reviews" aria-labelledby="reviews-title">
+      <header class="section-head">
+        <p class="section-head__kicker" data-up>Отзывы</p>
+        <h2 class="section-head__title" id="reviews-title" data-letters>Отзывы наших гостей</h2>
+        <span class="ornament ornament--green" aria-hidden="true" data-ornament></span>
+      </header>
+      <div class="reviews">
+        <div class="reviews__viewport" data-reviews-viewport>
+          <div class="reviews__track" data-reviews></div>
+        </div>
+        <div class="strip__nav reviews__nav">
+          <button class="strip__arrow" type="button" aria-label="Предыдущие отзывы" data-reviews-prev>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+          </button>
+          <div class="strip__progress" aria-hidden="true"><span data-reviews-bar></span></div>
+          <button class="strip__arrow" type="button" aria-label="Следующие отзывы" data-reviews-next>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Контакты — как их раздел «Обратная связь и реквизиты» ============ -->
+    <section class="contacts" id="contacts" aria-labelledby="contacts-title">
+      <header class="section-head section-head--light">
+        <p class="section-head__kicker" data-up>Контакты</p>
+        <h2 class="section-head__title" id="contacts-title" data-letters>Обратная связь и контакты</h2>
+        <span class="ornament" aria-hidden="true" data-ornament></span>
+      </header>
+
+      <div class="contacts__grid">
+        <!-- Контакты ресторана -->
+        <div class="contacts__info">
+          <div class="cinfo" data-up>
+            <span class="cinfo__label">Часы работы</span>
+            <p class="cinfo__value">Пн.–Вс.: 12:00–23:00</p>
+          </div>
+          <div class="cinfo" data-up>
+            <span class="cinfo__label">Адрес</span>
+            <p class="cinfo__value">Екатеринбург,<br>ул. Малышева, д. 137</p>
+          </div>
+          <div class="cinfo" data-up>
+            <span class="cinfo__label">Телефоны</span>
+            <p class="cinfo__value"><a href="tel:+73433788118">+7 (343) 378-81-18</a><br><a href="tel:+79126000281">+7 (912) 600-02-81</a></p>
+          </div>
+          <div class="cinfo" data-up>
+            <span class="cinfo__label">Мы в соцсетях</span>
+            <p class="cinfo__note">Все новости о ресторане читайте в наших соцсетях и телеграм-канале</p>
+            <div class="socials">
+              <a class="social" href="https://t.me/troekurov_rest" target="_blank" rel="noopener" aria-label="Телеграм-канал ресторана">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 4 3 11.2l6.3 2.2L18 7.5l-6.8 7 .1 5 3-3.4 4 3L21 4z"/></svg><span>Телеграм</span></a>
+              <a class="social" href="https://vk.com/troekurov_rest" target="_blank" rel="noopener" aria-label="Ресторан ВКонтакте">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h3.2c.2 3.6 1.8 5.6 3.3 6V7h3v3.4c1.4-.2 2.9-1.8 3.4-3.4h3c-.4 2.1-2 3.7-3.1 4.4 1.1.6 2.9 2 3.6 4.6h-3.3c-.5-1.7-1.9-3-3.6-3.2V16h-.4C6.6 16 3.3 13 3 7z"/></svg><span>ВКонтакте</span></a>
+              <a class="social" href="https://www.tripadvisor.ru/Restaurant_Review-g298540-d3770272-Reviews-Troekurov-Yekaterinburg_Sverdlovsk_Oblast_Urals_District.html" target="_blank" rel="noopener" aria-label="Ресторан на Tripadvisor">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="7" cy="13" r="3.2"/><circle cx="17" cy="13" r="3.2"/><path d="M3 9.5c2.6-2.2 5.7-3.2 9-3.2s6.4 1 9 3.2M12 13c0-2 .8-3.5 2-4.3M12 13c0-2-.8-3.5-2-4.3"/></svg><span>Tripadvisor</span></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Обратная связь — поля и темы как у них -->
+        <form class="contacts__form sheet__form" data-contact-form data-up>
+          <h3 class="contacts__form-title">Обратная связь</h3>
+          <p class="contacts__form-lead">Если у вас остались вопросы, претензии, предложения или ещё что-то, о чём вы хотели бы сообщить нам, пишите, и мы обязательно перезвоним вам как можно скорее.</p>
+          <label>Тема сообщения
+            <select name="subject" required>
+              <option value="" selected disabled>Выберите тему сообщения</option>
+              <option>Вопросы по бронированию столов и гостевому сервису</option>
+              <option>Оставить обращение управляющему</option>
+              <option>Сообщить о проблеме в работе сайта или предложить его улучшение</option>
+              <option>Предложение о сотрудничестве (поставки и пр.)</option>
+              <option>Прочее</option>
+            </select>
+          </label>
+          <div class="sheet__row">
+            <label>Имя<input name="name" autocomplete="name" required></label>
+            <label>Телефон<input name="phone" type="tel" autocomplete="tel" placeholder="+7" required></label>
+          </div>
+          <label>Email<input name="email" type="email" autocomplete="email"></label>
+          <label>Сообщение<textarea name="message" rows="4"></textarea></label>
+          <label class="sheet__agree"><input type="checkbox" required> С <a href="docs/doc-04.pdf" target="_blank" rel="noopener">правилами обработки персональных данных</a> согласен</label>
+          <button class="btn btn--light" type="submit">Отправить</button>
+        </form>
+      </div>
+
+      <!-- Карта — их карта из Яндекс Карт -->
+      <div class="contacts__map" data-up>
+        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A8ef35b51cfe3928bd56d90834db9a9ddd4380c012d5b560956d835b1e0fa9992&amp;source=constructor&amp;scroll=false"
+                title="Ресторан «Троекуровъ» на карте: Екатеринбург, ул. Малышева, 137" loading="lazy" allowfullscreen></iframe>
+      </div>
+    </section>
+  </main>
+
+  <!-- Просмотр фото галереи крупно -->
+  <dialog class="lightbox" data-lightbox aria-label="Фотография интерьера">
+    <img class="lightbox__img" alt="" data-lightbox-img tabindex="-1" autofocus>
+    <button class="lightbox__close" type="button" aria-label="Закрыть" data-lightbox-close>×</button>
+    <button class="plaque__arrow lightbox__prev" type="button" aria-label="Предыдущее фото" data-lightbox-prev>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+    </button>
+    <button class="plaque__arrow lightbox__next" type="button" aria-label="Следующее фото" data-lightbox-next>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+    </button>
+    <p class="lightbox__caption" data-lightbox-caption></p>
+  </dialog>
+
+  <!-- Окно для разделов из подвала: содержимое подставляется из шаблонов ниже -->
+  <dialog class="sheet" data-sheet-dialog aria-labelledby="sheet-title">
+    <div class="sheet__inner" tabindex="-1" autofocus>
+      <button class="sheet__close" type="button" aria-label="Закрыть" data-sheet-close>×</button>
+      <div data-sheet-body></div>
+    </div>
+  </dialog>
+
+  <template id="sheet-login">
+    <h2 class="sheet__title" id="sheet-title">Войти</h2>
+    <span class="ornament" aria-hidden="true"></span>
+    <p class="sheet__center">Пришлём код авторизации в MAX или СМС на ваш номер</p>
+    <form class="sheet__form" data-thanks="Код отправлен. Введите его, когда придёт сообщение.">
+      <label>Телефон<input name="phone" type="tel" autocomplete="tel" placeholder="+7" required></label>
+      <label class="sheet__agree"><input type="checkbox" required> С правилами обработки персональных данных согласен</label>
+      <button class="btn btn--light" type="submit">Войти</button>
+    </form>
+  </template>
+
+  <!-- «Получить бонусную карту»: у них ведёт на внешнюю форму, у нас — своё окно -->
+  <template id="sheet-bonus-card">
+    <h2 class="sheet__title" id="sheet-title">Получить бонусную карту</h2>
+    <span class="ornament" aria-hidden="true"></span>
+    <p class="sheet__center">Возвращаем 5% баллами. Карта хранится в приложении Wallet вашего телефона.</p>
+    <form class="sheet__form" data-thanks="Спасибо! Ссылка на бонусную карту придёт вам в СМС.">
+      <label>Имя<input name="name" autocomplete="name" required></label>
+      <label>Телефон<input name="phone" type="tel" autocomplete="tel" placeholder="+7" required></label>
+      <label class="sheet__agree"><input type="checkbox" required> Мне есть 18 лет, с правилами программы лояльности и обработки персональных данных согласен</label>
+      <button class="btn btn--light" type="submit">Получить карту</button>
+    </form>
+    <p class="sheet__center"><a href="menu-pdf/loyalty.pdf" target="_blank" rel="noopener">Правила программы лояльности · PDF</a></p>
+  </template>
+
+  <template id="sheet-bonus">
+    <h2 class="sheet__title" id="sheet-title">Личный кабинет бонусного клуба</h2>
+    <span class="ornament" aria-hidden="true"></span>
+    <p>Один накопленный бонус равен одному рублю. Бонусами вы можете оплатить до&nbsp;50&nbsp;% суммы чека. Электронная карта всегда с вами в телефоне.</p>
+    <p>Чтобы узнать баланс и историю бонусов, войдите по номеру телефона — пришлём код в MAX или СМС.</p>
+    <form class="sheet__form" data-thanks="Код отправлен. Введите его, когда придёт сообщение.">
+      <label>Телефон<input name="phone" type="tel" autocomplete="tel" placeholder="+7" required></label>
+      <label class="sheet__agree"><input type="checkbox" required> С правилами обработки персональных данных согласен</label>
+      <button class="btn btn--light" type="submit">Войти в личный кабинет</button>
+    </form>
+  </template>
+
+  <template id="sheet-subscribe">
+    <h2 class="sheet__title" id="sheet-title">Подписка на новости</h2>
+    <span class="ornament" aria-hidden="true"></span>
+    <p>Мы стараемся делиться с вами только самыми интересными новостями нашего ресторана, специальными предложениями, новинками меню, анонсами гастрономических мероприятий и рецептами шефа. Будем рады, если оставите нам свой email-адрес для рассылки!</p>
+    <form class="sheet__form" data-thanks="Спасибо! Вы подписались на новости ресторана.">
+      <label>Email<input name="email" type="email" autocomplete="email" required></label>
+      <label class="sheet__agree"><input type="checkbox" required> С правилами обработки персональных данных согласен</label>
+      <button class="btn btn--light" type="submit">Подписаться</button>
+    </form>
+  </template>
+
+  <template id="sheet-partners">
+    <h2 class="sheet__title" id="sheet-title">Сотрудничество с рестораном</h2>
+    <span class="ornament" aria-hidden="true"></span>
+    <p>Ресторан «Троекуровъ» входит в группу ООО «Реста Менеджмент». Адрес: Екатеринбург, ул.&nbsp;Луначарского,&nbsp;173А-9.</p>
+    <dl class="sheet__contacts">
+      <div><dt>Поддержка гостей</dt><dd><a href="mailto:service@resta.rest">service@resta.rest</a></dd></div>
+      <div><dt>Работа в ресторанах</dt><dd><a href="tel:+79126000492">+7 912 6000 492</a><br><a href="tel:+79126000416">+7 912 6000 416</a><br><a href="mailto:hr@resta.rest">hr@resta.rest</a></dd></div>
+      <div><dt>Поставки продукции</dt><dd><a href="tel:+73433171899">+7 343 317-18-99</a><br><a href="mailto:logist@resta.rest">logist@resta.rest</a></dd></div>
+      <div><dt>Отдел маркетинга</dt><dd><a href="tel:+73433171899">+7 343 317-18-99</a><br><a href="mailto:om@resta.rest">om@resta.rest</a></dd></div>
+    </dl>
+  </template>
+
+  <template id="sheet-gift">
+    <h2 class="sheet__title" id="sheet-title">Подарочные сертификаты</h2>
+    <span class="ornament" aria-hidden="true"></span>
+    <p>У нас есть подарочные карты номиналом от 1000&nbsp;₽. Вы можете приобрести их в ресторане.</p>
+    <p>Екатеринбург, ул.&nbsp;Малышева,&nbsp;137 · <a href="tel:+73433788118">+7 (343) 378-81-18</a></p>
+    <p><a class="sheet__doc" href="docs/doc-12.pdf" target="_blank" rel="noopener">Условия использования подарочного сертификата <span>PDF</span></a></p>
+  </template>
+
+  <template id="sheet-feedback">
+    <h2 class="sheet__title" id="sheet-title">Обратная связь</h2>
+    <span class="ornament" aria-hidden="true"></span>
+    <p>Если у вас остались вопросы, претензии, предложения или ещё что-то, о чём вы хотели бы сообщить нам, пишите, и мы обязательно перезвоним вам как можно скорее.</p>
+    <form class="sheet__form" data-thanks="Спасибо! Мы перезвоним вам как можно скорее.">
+      <label>Тема сообщения
+        <select name="subject" required>
+          <option value="" selected disabled>Выберите тему сообщения</option>
+          <option>Вопросы по бронированию столов и гостевому сервису</option>
+          <option>Оставить обращение управляющему</option>
+          <option>Сообщить о проблеме в работе сайта или предложить его улучшение</option>
+          <option>Предложение о сотрудничестве (поставки и пр.)</option>
+          <option>Прочее</option>
+        </select>
+      </label>
+      <div class="sheet__row">
+        <label>Имя<input name="name" autocomplete="name" required></label>
+        <label>Телефон<input name="phone" type="tel" autocomplete="tel" placeholder="+7" required></label>
+      </div>
+      <label>Email<input name="email" type="email" autocomplete="email"></label>
+      <label>Сообщение<textarea name="message" rows="4"></textarea></label>
+      <label class="sheet__agree"><input type="checkbox" required> С правилами обработки персональных данных согласен</label>
+      <button class="btn btn--light" type="submit">Отправить</button>
+    </form>
+  </template>
+
+  <template id="sheet-faq">
+    <h2 class="sheet__title" id="sheet-title">Частые вопросы</h2>
+    <span class="ornament" aria-hidden="true"></span>
+    <div class="faq" data-faq></div>
+  </template>
+
+  <template id="sheet-agreement">
+    <h2 class="sheet__title" id="sheet-title">Пользовательское соглашение</h2>
+    <span class="ornament" aria-hidden="true"></span>
+    <div class="sheet__text" data-agreement></div>
+  </template>
+
+  <!-- Полные тексты новостей — с их сайта; ссылки ведут на наши разделы -->
+  <template id="sheet-news-app">
+    <img class="sheet__photo" src="img/news/60.jpg" alt="">
+    <p class="sheet__date">29 октября 2026</p>
+    <h2 class="sheet__title" id="sheet-title">Изменения в работе мобильного приложения</h2>
+    <span class="ornament" aria-hidden="true"></span>
+    <p>Дорогие гости! По независящим от нас причинам наше мобильное приложение больше не работает. Приносим извинения за неудобства и благодарим вас за понимание.</p>
+    <p>Заказать любимые блюда из «Троекурова» по-прежнему удобно <a href="#menu" data-open-tab="delivery">на нашем сайте</a> — с телефона или компьютера. Выберите блюда, добавьте их в корзину и укажите адрес доставки.</p>
+    <p>Семейный обед, ужин вдвоём или встреча дорогих гостей? Мы с радостью приготовим угощения к вашему столу. Спасибо, что остаётесь с нами!</p>
+  </template>
+
+  <template id="sheet-news-lunch">
+    <img class="sheet__photo" src="img/news/63.jpg" alt="">
+    <p class="sheet__date">18 октября 2026</p>
+    <h2 class="sheet__title" id="sheet-title">Обновили обеденное меню</h2>
+    <span class="ornament" aria-hidden="true"></span>
+    <p>Добавили вкусные и сытные блюда, чтобы обеденная пауза стала приятнее. Начните с салата с креветками и помидорами или с греческого. А если хочется чего-то нежного, попробуйте лосося с авокадо.</p>
+    <p>На горячее: говядина с гриля с грибным рагу, тефтели из щуки под соусом бешамель или сибас в соусе из белого вина. А если есть время задержаться за столом, закажите медовик с малиновым медом.</p>
+    <p>В ресторане подаём обеды с 12 до 16. <a href="#menu" data-open-tab="lunch">На сайте</a> блюда из обеденного меню можно заказать в течение всего дня.</p>
+  </template>
+
+  <template id="sheet-news-fest">
+    <img class="sheet__photo" src="img/news/59.jpg" alt="">
+    <p class="sheet__date">5 октября 2026</p>
+    <h2 class="sheet__title" id="sheet-title">Российский ресторанный фестиваль</h2>
+    <span class="ornament" aria-hidden="true"></span>
+    <p>20 лет ресторану — повод оглянуться назад и с гордостью выбрать лучшее. Для Российского ресторанного фестиваля мы собрали в одном сете блюда, которые появлялись в «Троекурове» в разные годы, покоряли гостей с первого вкуса и оставались в меню надолго. Сегодня это признанные хиты нашей кухни — и у каждого своя история.</p>
+    <p>В фестивальный сет вошли:</p>
+    <ul class="sheet__list">
+      <li>Сугудай из муксуна с картофелем и брусникой</li>
+      <li>Жюльен из камчатского краба</li>
+      <li>Палтус с копчёными сливками и цукини</li>
+      <li>Мильфей с вишней и карамельным соусом</li>
+    </ul>
+    <p><b>Стоимость сета — 3 026 ₽</b></p>
+    <p>Мы гордимся тем, что вновь стали частью Российского ресторанного фестиваля, и рады представить блюда, в которых — история, характер и вкус «Троекурова».</p>
+    <p>Ждём вас в гости — вспомнить любимое и открыть для себя то, что ещё не довелось попробовать!</p>
+  </template>
+
+  <template id="sheet-news-gift">
+    <img class="sheet__photo" src="img/news/56.jpg" alt="">
+    <p class="sheet__date">1 сентября 2026</p>
+    <h2 class="sheet__title" id="sheet-title">Подарочные сертификаты</h2>
+    <span class="ornament" aria-hidden="true"></span>
+    <p>Иногда вместо вещей хочется дарить впечатления и время, проведённое вместе.</p>
+    <p>Сертификат «Троекурова» — это повод собраться на семейный ужин, устроить романтический вечер, познакомиться с уральской кухней или наконец попробовать блюда, которые давно хотелось заказать.</p>
+    <p>Сертификаты представлены номиналами 1 000, 3 000, 5 000 и 10 000 ₽, а также с возможностью выбрать свободную сумму.</p>
+    <p>Приобрести сертификат можно в ресторане «Троекуров».</p>
+    <p><a class="sheet__doc" href="docs/doc-12.pdf" target="_blank" rel="noopener">Условия использования подарочного сертификата <span>PDF</span></a></p>
+  </template>
+
+  <template id="sheet-docs">
+    <h2 class="sheet__title" id="sheet-title">Правовые документы</h2>
+    <span class="ornament" aria-hidden="true"></span>
+    <ul class="docs" data-docs></ul>
+  </template>
+
+  <dialog class="booking" data-booking aria-labelledby="booking-title">
+    <form class="booking__form" method="dialog" data-booking-form tabindex="-1" autofocus>
+      <button class="booking__close" type="submit" value="close" formnovalidate aria-label="Закрыть">×</button>
+      <h2 id="booking-title" class="booking__title">Забронировать стол</h2>
+      <p class="booking__note">После отправки запроса мы свяжемся с вами по телефону, чтобы подтвердить детали бронирования.</p>
+
+      <div class="booking__grid">
+        <label>Имя<input name="name" autocomplete="name" required></label>
+        <label>Телефон<input name="phone" type="tel" autocomplete="tel" placeholder="+7" required></label>
+        <label>Дата<input name="date" type="date" required></label>
+        <label>Время<input name="time" type="time" min="12:00" max="22:00" required></label>
+        <label class="booking__wide">Гостей
+          <select name="guests">
+            <option>1</option><option selected>2</option><option>3</option><option>4</option>
+            <option>5</option><option>6</option><option>7</option><option>8</option><option value="9+">Больше 8</option>
+          </select>
+        </label>
+      </div>
+
+      <label class="booking__agree"><input type="checkbox" required> С правилами обработки персональных данных согласен</label>
+      <button class="btn btn--primary booking__submit" type="submit" value="send">Отправить запрос</button>
+      <p class="booking__alt">Или позвоните: <a href="tel:+73433788118">+7 (343) 378-81-18</a>, <a href="tel:+79126000281">+7 (912) 600-02-81</a></p>
+    </form>
+  </dialog>
+
+  <script type="module" src="js/main.js?v=56"></script>
+</body>
+</html>
