@@ -1347,3 +1347,16 @@ section[id] { scroll-margin-top: 80px; }
 /* Точки слайдера: сама точка маленькая, но нажимать по ней удобно — зона касания 32×32 */
 .plaque__dots button { position: relative; }
 .plaque__dots button::after { content: ""; position: absolute; inset: -12px; }
+
+/* Подпись «концепт» внизу первого экрана */
+.hero { grid-template-rows: 1fr auto auto; }
+.hero__links { padding-bottom: 8px !important; }
+.concept-note {
+  margin: 0; padding: 0 var(--pad) 10px; text-align: center;
+  font: 400 11px/1.4 var(--font-body); letter-spacing: .06em; color: var(--cream); opacity: .5; pointer-events: none;
+}
+@media (max-width: 640px) {
+  .hero__links { padding: 8px 12px 4px !important; }
+  .hero__links button { padding-block: 1px; }
+  .concept-note { padding-bottom: 6px; }
+}
